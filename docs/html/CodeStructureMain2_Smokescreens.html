@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The smokescreen pages &#8212; NovalandCorruptionGuide 2025 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <script src="_static/documentation_options.js?v=cb975c41"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
@@ -37,25 +36,25 @@
             
   <section id="the-smokescreen-pages">
 <span id="smokescreens"></span><h1>The smokescreen pages<a class="headerlink" href="#the-smokescreen-pages" title="Link to this heading">¶</a></h1>
-<p>The smokescreen pages are designed to immerse participants more into the virtual country and to reduce demand effects by distracting participants from the main purpose of the questionnaire,. They are presented as everyday situations that participants might encounter in Novaland. The smokescreens are displayed in the first and fifth rounds of the main app. The first smokescreen is displayed after the introduction to Novaland, while the second smokescreen is displayed after the second vignette.</p>
+<p>The smokescreen pages are designed to immerse participants more into the virtual country and to reduce demand effects by distracting participants from the main purpose of the questionnaire. They are presented as everyday situations that participants might encounter in Novaland. The smokescreens are displayed in the first and fifth rounds of the main app. The first smokescreen is displayed after the introduction to Novaland, while the second smokescreen is displayed after the second vignette.</p>
 <p>The scenarios of the smokescreens contain arbitrary situations that are not directly related to the main purpose of the questionnaire. One smokescreen is about adopting a pet, while the other smokescreen is about visiting a restaurant. The order of these two scenarios was randomized for each participant.</p>
 <p>Let’s have a detailed look into the code of the smokescreen pages - how they are created, how they are randomized and how they are displayed to the participants.</p>
 <p>In the <code class="code docutils literal notranslate"><span class="pre">C</span></code> section, the rounds in which the smokescreens are displayed are defined in <code class="code docutils literal notranslate"><span class="pre">SMOKESCREEN_ROUNDS</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">5]</span></code>.
 The smokescreens are then defined in the <code class="code docutils literal notranslate"><span class="pre">smokescreens</span></code> variable as a list of strings: <code class="code docutils literal notranslate"><span class="pre">smokescreens</span> <span class="pre">=</span> <span class="pre">['pets',</span> <span class="pre">'restaurant']</span></code>. The first smokescreen is called “pets” and the second smokescreen is called “restaurant”.
 In the <code class="code docutils literal notranslate"><span class="pre">creating_session</span></code> function, the order of the smokescreens is randomized for each participant. This is done by using the <code class="code docutils literal notranslate"><span class="pre">smokescreens</span></code> object and then shuffling it using the <code class="code docutils literal notranslate"><span class="pre">random.shuffle()</span></code> function. The randomized order is then stored in the <code class="code docutils literal notranslate"><span class="pre">Participant</span></code> object as <code class="code docutils literal notranslate"><span class="pre">p.vars['smokescreen_order']</span></code>.</p>
 <p>The code for the smokescreen pages is implemented in the <code class="code docutils literal notranslate"><span class="pre">Smokescreen</span></code> page class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Smokescreen</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Smokescreen</span><span class="p">(</span><span class="n">Page</span><span class="p">):</span>
 <span class="linenos"> 2</span>    <span class="n">form_model</span> <span class="o">=</span> <span class="s1">&#39;player&#39;</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span>    <span class="nd">@staticmethod</span>
-<span class="linenos"> 5</span>    <span class="k">def</span> <span class="nf">is_displayed</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="k">def</span><span class="w"> </span><span class="nf">is_displayed</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
 <span class="linenos"> 6</span>        <span class="k">return</span> <span class="n">player</span><span class="o">.</span><span class="n">round_number</span> <span class="ow">in</span> <span class="n">C</span><span class="o">.</span><span class="n">SMOKESCREEN_ROUNDS</span>
 <span class="linenos"> 7</span>
-<span class="linenos"> 8</span>    <span class="k">def</span> <span class="nf">get_form_fields</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="k">def</span><span class="w"> </span><span class="nf">get_form_fields</span><span class="p">(</span><span class="n">player</span><span class="p">):</span>
 <span class="linenos"> 9</span>        <span class="k">return</span> <span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">current_scenario</span><span class="p">]</span>
 <span class="linenos">10</span>
 <span class="linenos">11</span>    <span class="nd">@staticmethod</span>
-<span class="linenos">12</span>    <span class="k">def</span> <span class="nf">vars_for_template</span><span class="p">(</span><span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">):</span>
+<span class="linenos">12</span>    <span class="k">def</span><span class="w"> </span><span class="nf">vars_for_template</span><span class="p">(</span><span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">):</span>
 <span class="linenos">13</span>        <span class="k">return</span> <span class="p">{</span>
 <span class="linenos">14</span>            <span class="s1">&#39;smokescreen&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;main/smokescreens/</span><span class="si">{</span><span class="n">player</span><span class="o">.</span><span class="n">current_scenario</span><span class="si">}</span><span class="s1">.html&#39;</span><span class="p">,</span>
 <span class="linenos">15</span>            <span class="s1">&#39;smokescreen_header&#39;</span><span class="p">:</span> <span class="n">C</span><span class="o">.</span><span class="n">scenario_headers</span><span class="p">[</span><span class="n">player</span><span class="o">.</span><span class="n">round_number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
@@ -128,16 +127,7 @@ The header of the page is defined in the <code class="code docutils literal notr
 
 
 
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Novaland2Layout.html">The fictional country of Novaland</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ProjectStructure.html">Structure of the oTree project</a></li>
@@ -162,6 +152,16 @@ The header of the page is defined in the <code class="code docutils literal notr
   </ul></li>
 </ul>
 </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -179,7 +179,7 @@ The header of the page is defined in the <code class="code docutils literal notr
       
       |
       Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="_sources/CodeStructureMain2_Smokescreens.rst.txt"

@@ -11,7 +11,7 @@ Requirements
 
 Before proceeding, ensure that you have the following installed:
 
-- Python 3.8 or newer
+- Python 3.12
 - Git
 - pip (Python package installer)
 - Virtual environment support (optional but recommended)

@@ -118,18 +118,18 @@ In the __init__.py file of the :code:`post` app, we define the **PostSurvey** cl
    .. code-block:: python
 
     def get_form_fields(player):
-    if player.participant.is_browser_bot:
-        r = ['nova_certificate_bin', 'nova_certificate_open', 'nova_dec', 'bribery_exp_pers', 'bribery_exp',
-             'bribery_exp_smone', 'att_state_inequality', 'soc_trust', 'helpful', 'att_taxes_welfare',
-             'att_incr_welfare', 'att_immigration', 'att_voting_intention', 'att_voting_intention_open',
-             'soc_gender', 'soc_birthyear', 'soc_marital_status', 'soc_hhsize', 'soc_children', 'soc_employment',
-             'soc_employment_open', 'soc_pers_income', 'soc_education', 'soc_job_education', 'att_leftright',
-             'soc_postalcode', 'soc_citizenship', 'soc_born_germany', 'soc_parents_born_germany',
-             'svx_participation_location', 'svx_participation_device', 'svx_interest', 'svx_difficulty',
-             'svx_privacy', 'svx_technical_problems_bin', 'svx_technical_problems_open', 'svx_gaming',
-             'svx_purpose', 'svx_final_comments']
+        if player.participant.is_browser_bot:
+            r = ['nova_certificate_bin', 'nova_certificate_open', 'nova_dec', 'bribery_exp_pers', 'bribery_exp',
+                'bribery_exp_smone', 'att_state_inequality', 'soc_trust', 'helpful', 'att_taxes_welfare',
+                'att_incr_welfare', 'att_immigration', 'att_voting_intention', 'att_voting_intention_open',
+                'soc_gender', 'soc_birthyear', 'soc_marital_status', 'soc_hhsize', 'soc_children', 'soc_employment',
+                'soc_employment_open', 'soc_pers_income', 'soc_education', 'soc_job_education', 'att_leftright',
+                'soc_postalcode', 'soc_citizenship', 'soc_born_germany', 'soc_parents_born_germany',
+                'svx_participation_location', 'svx_participation_device', 'svx_interest', 'svx_difficulty',
+                'svx_privacy', 'svx_technical_problems_bin', 'svx_technical_problems_open', 'svx_gaming',
+                'svx_purpose', 'svx_final_comments']
 
-        return r
+            return r
 
 4. The :code:`post` method is called when the survey is submitted. It processes the survey data and calls the :code:`process_survey_data` method to handle the data submission. This method is responsible for handling the survey submission and ensuring that the data is correctly processed and stored in the database. It also handles any errors that may occur during the submission process, such as invalid JSON data or unexpected errors.
 

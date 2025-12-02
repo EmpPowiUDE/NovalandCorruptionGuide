@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Part 0: Project-wide files &#8212; NovalandCorruptionGuide 2025 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <script src="_static/documentation_options.js?v=cb975c41"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
@@ -94,7 +93,7 @@ These variables are:</p>
 </section>
 <section id="aesthetics-of-the-web-questionnaire">
 <h2>Aesthetics of the web questionnaire<a class="headerlink" href="#aesthetics-of-the-web-questionnaire" title="Link to this heading">¶</a></h2>
-<p>The aesthetics of the web questionnaire are defined in the <code class="file docutils literal notranslate"><span class="pre">_templates/global/Page.html</span></code> file. This file contains the HTML code that defines the overall layout and design of the questionnaire pages. It includes style elements such fonts, colors, and outlays used on each project. To ensure a consistent appearance of the questionnaire’s web pages, nearly all pages build on this template and only specify their content and functionality in their designated HTML files, of which one exist for each page of the questionnaire. The <code class="code docutils literal notranslate"><span class="pre">Page.html</span></code> file calls the <code class="file docutils literal notranslate"><span class="pre">_static/NovalandStyle.css</span></code> file, in which the appearance of certain visual parts of the questionnaire pages are defined. The CSS file includes styles for various elements such as buttons, text, and layout, ensuring a consistent look and feel across all pages of the questionnaire. We aimed to create a visually appealing and user-friendly minimalistic interface for the questionnaire.
+<p>The aesthetics of the web questionnaire are defined in the <code class="file docutils literal notranslate"><span class="pre">_templates/global/Page.html</span></code> file. This file contains the HTML code that defines the overall layout and design of the questionnaire pages. It includes style elements such as fonts, colors, and outlays used on each project. To ensure a consistent appearance of the questionnaire’s web pages, nearly all pages build on this template and only specify their content and functionality in their designated HTML files, of which one exist for each page of the questionnaire. The <code class="code docutils literal notranslate"><span class="pre">Page.html</span></code> file calls the <code class="file docutils literal notranslate"><span class="pre">_static/NovalandStyle.css</span></code> file, in which the appearance of certain visual parts of the questionnaire pages are defined. The CSS file includes styles for various elements such as buttons, text, and layout, ensuring a consistent look and feel across all pages of the questionnaire. We aimed to create a visually appealing and user-friendly minimalistic interface for the questionnaire.
 For more detail, please refer to the <a class="reference external" href="https://otree.readthedocs.io/en/latest/templates.html">official oTree documentation on HTML templates</a> section of this documentation.</p>
 </section>
 </section>
@@ -115,16 +114,7 @@ For more detail, please refer to the <a class="reference external" href="https:/
 
 
 
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Novaland2Layout.html">The fictional country of Novaland</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ProjectStructure.html">Structure of the oTree project</a></li>
@@ -147,6 +137,16 @@ For more detail, please refer to the <a class="reference external" href="https:/
   </ul></li>
 </ul>
 </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -164,7 +164,7 @@ For more detail, please refer to the <a class="reference external" href="https:/
       
       |
       Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="_sources/CodeStructureGlobalFiles.rst.txt"

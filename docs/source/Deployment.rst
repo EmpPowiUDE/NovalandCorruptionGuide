@@ -32,7 +32,7 @@ without having to worry about infrastructure.
 
 To deploy the oTree project on Heroku, follow these steps:
 
-1. **Create a Heroku account**: Visit the `Heroku website<https://www.heroku.com/>`_ and sign in to your Heroku account. Create one if you don't have an account yet.
+1. **Create a Heroku account**: Visit the `Heroku website <https://www.heroku.com>`_ and sign in to your Heroku account. Create one if you don't have an account yet.
 
 2. **Install the Heroku CLI**: Download and `install the Heroku Command Line Interface (CLI) <https://devcenter.heroku.com/articles/heroku-cli>`_.
 

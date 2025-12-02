@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Part 3: The Election in Novaland &#8212; NovalandCorruptionGuide 2025 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <script src="_static/documentation_options.js?v=cb975c41"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
@@ -37,7 +36,7 @@
             
   <section id="part-3-the-election-in-novaland">
 <h1>Part 3: The Election in Novaland<a class="headerlink" href="#part-3-the-election-in-novaland" title="Link to this heading">¶</a></h1>
-<p>After participants completed the fourth vignette, the part of the Novaland stay that revolves around the national election started. The respective pages are part of the <cite>election</cite> app in the oTree project. In this election, participants could vote for onw of two parties, the <strong>Soziale Partei Novaland</strong> or the <strong>Konservative Partei Novaland</strong>. The election was designed to test the effects of public service quality and corruption on electoral behavior and incumbent punishment.</p>
+<p>After participants completed the pollster page, the part of the Novaland stay that revolves around the national election started. The respective pages are part of the <cite>election</cite> app in the oTree project. In this election, participants could vote for one of two parties, the <strong>Soziale Partei Novaland</strong> or the <strong>Konservative Partei Novaland</strong>. The election was designed to test the effects of public service quality and corruption on electoral behavior and incumbent punishment.</p>
 <dl class="simple">
 <dt>The election app is structured as follows:</dt><dd><ol class="arabic simple">
 <li><p>The first page introduces the election and the political system of Novaland.</p></li>
@@ -62,7 +61,6 @@
 </section>
 <section id="the-introduction-of-the-parties">
 <h3>2. &amp; 3. The introduction of the parties<a class="headerlink" href="#the-introduction-of-the-parties" title="Link to this heading">¶</a></h3>
-<p>The second and third pages are the <strong>party_1</strong> and <strong>party_2</strong> pages, respectively. On these pages, participants were presented with the information about the two parties. The order of the pages was randomized, so that participants either saw the <strong>Soziale Partei Novaland</strong> first or the <strong>Konservative Partei Novaland</strong>. This is done by setting conditional statements in the HTML templates which call the values of the <code class="code docutils literal notranslate"><span class="pre">first_party</span></code> variable.</p>
 <p>The second and third pages are the <strong>party_1</strong> and <strong>party_2</strong> pages, respectively. On these pages, participants were presented with the information about the two parties. The order of the pages was randomized, so that participants either saw the <strong>Soziale Partei Novaland</strong> first or the <strong>Konservative Partei Novaland</strong>. This is done by setting conditional statements in the HTML templates which call the values of the <code class="code docutils literal notranslate"><span class="pre">first_party</span></code> variable. This is how the <strong>party_1</strong> page is created:</p>
 <div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span> <span class="cm">&lt;!-- Builds on the global Page.html template --&gt;</span>
 <span class="linenos">  2</span> {{ extends &#39;global/Page.html&#39; }}
@@ -181,7 +179,7 @@ Below this explanatory text, a table with multiple columns is created that conta
 <p>This is how the <strong>election_page</strong> page is created:</p>
 <p>In page class of the init file, the <code class="code docutils literal notranslate"><span class="pre">vars_for_template</span></code> method is used to pass the information about the incumbent party (<code class="code docutils literal notranslate"><span class="pre">incumbent_party</span></code>) and the identifier of the first party (<code class="code docutils literal notranslate"><span class="pre">first_party</span></code>) to the HTML template. The <code class="code docutils literal notranslate"><span class="pre">Partei</span></code> variable from the <code class="code docutils literal notranslate"><span class="pre">Player</span></code> object is used to store the party that the participant voted for.</p>
 <p>In the HTML template, there is a style block at the top that define the appearance of the buttons and the table layout in which the parties’ images and names are displayed. After that, the title of the page is defined in the <code class="code docutils literal notranslate"><span class="pre">h1</span></code> element, which contains the current day and the day count in Novaland. The main text below explains that participants can now vote for one of the two parties. The information about which of the two parties is the incumbent party is also displayed here, using <code class="code docutils literal notranslate"><span class="pre">{{</span> <span class="pre">incumbent_party</span> <span class="pre">}}</span></code> again.</p>
-<p>Below this paragraph, a table with multiple columns is created that contains the party images and the party namen. Participants could click on either parties’ image or name below the image to vote for that party. The images of the parties are displayed using the <code class="code docutils literal notranslate"><span class="pre">img</span></code> element, which uses the <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">static</span> <span class="pre">%}</span></code> tag to access the images stored in the <code class="code docutils literal notranslate"><span class="pre">static</span></code> folder of the oTree project, as it was done on the previous pages. The names of the parties are displayed in a paragraph element below the images. The order of the parties (which party is displayed in the left and which in the right column) is determined by the value of the <code class="code docutils literal notranslate"><span class="pre">first_party</span></code> variable. If the value is <strong>Konservative Partei Novaland</strong>, the <strong>Konservative Partei Novaland</strong> is displayed in the left column and the <strong>Soziale Partei Novaland</strong> in the right column, and vice versa.</p>
+<p>Below this paragraph, a table with multiple columns is created that contains the party images and the party names. Participants could click on either parties’ image or name below the image to vote for that party. The images of the parties are displayed using the <code class="code docutils literal notranslate"><span class="pre">img</span></code> element, which uses the <code class="code docutils literal notranslate"><span class="pre">{%</span> <span class="pre">static</span> <span class="pre">%}</span></code> tag to access the images stored in the <code class="code docutils literal notranslate"><span class="pre">static</span></code> folder of the oTree project, as it was done on the previous pages. The names of the parties are displayed in a paragraph element below the images. The order of the parties (which party is displayed in the left and which in the right column) is determined by the value of the <code class="code docutils literal notranslate"><span class="pre">first_party</span></code> variable. If the value is <strong>Konservative Partei Novaland</strong>, the <strong>Konservative Partei Novaland</strong> is displayed in the left column and the <strong>Soziale Partei Novaland</strong> in the right column, and vice versa.</p>
 <p>The following code snippet shows how the parties are displayed in the HTML template. This code is repeated for both parties, with the only difference being the party name and image:</p>
 <div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cm">&lt;!-- Display the image of the Konservative Partei Novaland --&gt;</span>
 <span class="linenos">2</span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{% static &#39;CPN.png&#39; %}&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;30%&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;center&quot;</span> <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;SHOWCPN()&quot;</span><span class="p">&gt;</span>
@@ -229,8 +227,8 @@ The header is defined as usual containing the day of the week and the day count 
 </section>
 <section id="the-debrief-from-novaland">
 <h3>6. The debrief from Novaland<a class="headerlink" href="#the-debrief-from-novaland" title="Link to this heading">¶</a></h3>
-<p>This is the last page of the election app and the last page of the Novaland stay. On this page, participants were informed that their stay in Novaland is over and they will be redirected to the end of the questionnaire. The page es defined in the <code class="code docutils literal notranslate"><span class="pre">election_outro</span></code> page class.
-The page only contains the header of the page, which is defined as usual and some text body. The text informs participants that their stay in Novaland is over and they will be redirected to the end of the questionnaire. They were specifically told that Novaland is a fictional place and does not exist in reality. They were also informed that the upcoming questionnaire would be about their real life.</p>
+<p>This is the last page of the election app and the last page of the Novaland stay. On this page, participants were informed that their stay in Novaland is over and they will be redirected to the end of the questionnaire. The page is defined in the <code class="code docutils literal notranslate"><span class="pre">election_outro</span></code> page class.
+The page only contains the header of the page, which is defined as usual, and some text body. Participants were specifically told that Novaland is a fictional place and does not exist in reality. They were also informed that the upcoming questionnaire would be about their real life.</p>
 </section>
 </section>
 </section>
@@ -251,16 +249,7 @@ The page only contains the header of the page, which is defined as usual and som
 
 
 
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Novaland2Layout.html">The fictional country of Novaland</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ProjectStructure.html">Structure of the oTree project</a></li>
@@ -283,6 +272,16 @@ The page only contains the header of the page, which is defined as usual and som
   </ul></li>
 </ul>
 </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -300,7 +299,7 @@ The page only contains the header of the page, which is defined as usual and som
       
       |
       Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
       
       |
       <a href="_sources/CodeStructureElection.rst.txt"
