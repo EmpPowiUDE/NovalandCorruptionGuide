@@ -1,7 +1,7 @@
 The fictional country of Novaland
 ========================================
 We created a fictional country called Novaland. The country is described to participants via text as a liberal democracy with an industrialized economy and an extensive welfare state. Within our study, Novaland serves as a setting for the experimental treatments and vignettes.
-After a small introductory questionnaire, participants are informed about their stay in Novaland and the characteristics of the country itself. Then, they experiences a series of situations in Novaland, including four vignettes included our main experimental treatments and were about accessing public services. Each situation that participants encountered was designed to simulate a real-life scenarios and were formulated to keep participants immersed in the fictional country. At the end of the Novaland stay, participants took part in the national election of Novaland.
+After a small introductory questionnaire, participants are informed about their role in Novaland and the characteristics of the country itself. Then, they experience a series of situations in Novaland, including four vignettes included our main experimental treatments and were about accessing public services. Each situation that participants encountered was designed to simulate a real-life scenarios and were formulated to keep participants immersed in the fictional country. At the end of the Novaland stay, participants took part in the national election of Novaland.
 After the elections, participants filled out a post-experimental questionnaire, which included questions about their socio-demographic characteristics and real-life attitudes.
 
 Participants' time in Novaland

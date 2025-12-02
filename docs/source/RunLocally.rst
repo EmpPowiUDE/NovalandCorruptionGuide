@@ -25,8 +25,8 @@ Step-by-Step Setup
 
    .. code-block:: bash
 
-      git clone https://github.com/YOUR_USERNAME/novaland.git
-      cd novaland
+      git clone https://github.com/EmpPowiUDE/novaland2.git
+      cd novaland2
 
 2. **Create a virtual environment**
 
@@ -34,7 +34,7 @@ Step-by-Step Setup
 
    .. code-block:: bash
 
-      python -m venv venv
+      python3.12 -m venv venv
       source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. **Install dependencies**

@@ -1,7 +1,7 @@
 Part 3: The Election in Novaland
 =======================================
 
-After participants completed the fourth vignette, the part of the Novaland stay that revolves around the national election started. The respective pages are part of the `election` app in the oTree project. In this election, participants could vote for onw of two parties, the **Soziale Partei Novaland** or the **Konservative Partei Novaland**. The election was designed to test the effects of public service quality and corruption on electoral behavior and incumbent punishment.
+After participants completed the pollster page, the part of the Novaland stay that revolves around the national election started. The respective pages are part of the `election` app in the oTree project. In this election, participants could vote for one of two parties, the **Soziale Partei Novaland** or the **Konservative Partei Novaland**. The election was designed to test the effects of public service quality and corruption on electoral behavior and incumbent punishment.
 
 The election app is structured as follows:
     #.  The first page introduces the election and the political system of Novaland.
@@ -28,8 +28,6 @@ The first page of the election app is the **election_intro** page. Here, partici
 
 2. & 3. The introduction of the parties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The second and third pages are the **party_1** and **party_2** pages, respectively. On these pages, participants were presented with the information about the two parties. The order of the pages was randomized, so that participants either saw the **Soziale Partei Novaland** first or the **Konservative Partei Novaland**. This is done by setting conditional statements in the HTML templates which call the values of the :code:`first_party` variable.
 
 The second and third pages are the **party_1** and **party_2** pages, respectively. On these pages, participants were presented with the information about the two parties. The order of the pages was randomized, so that participants either saw the **Soziale Partei Novaland** first or the **Konservative Partei Novaland**. This is done by setting conditional statements in the HTML templates which call the values of the :code:`first_party` variable. This is how the **party_1** page is created:
 
@@ -163,7 +161,7 @@ In page class of the init file, the :code:`vars_for_template` method is used to 
 
 In the HTML template, there is a style block at the top that define the appearance of the buttons and the table layout in which the parties' images and names are displayed. After that, the title of the page is defined in the :code:`h1` element, which contains the current day and the day count in Novaland. The main text below explains that participants can now vote for one of the two parties. The information about which of the two parties is the incumbent party is also displayed here, using :code:`{{ incumbent_party }}` again.
 
-Below this paragraph, a table with multiple columns is created that contains the party images and the party namen. Participants could click on either parties' image or name below the image to vote for that party. The images of the parties are displayed using the :code:`img` element, which uses the :code:`{% static %}` tag to access the images stored in the :code:`static` folder of the oTree project, as it was done on the previous pages. The names of the parties are displayed in a paragraph element below the images. The order of the parties (which party is displayed in the left and which in the right column) is determined by the value of the :code:`first_party` variable. If the value is **Konservative Partei Novaland**, the **Konservative Partei Novaland** is displayed in the left column and the **Soziale Partei Novaland** in the right column, and vice versa.
+Below this paragraph, a table with multiple columns is created that contains the party images and the party names. Participants could click on either parties' image or name below the image to vote for that party. The images of the parties are displayed using the :code:`img` element, which uses the :code:`{% static %}` tag to access the images stored in the :code:`static` folder of the oTree project, as it was done on the previous pages. The names of the parties are displayed in a paragraph element below the images. The order of the parties (which party is displayed in the left and which in the right column) is determined by the value of the :code:`first_party` variable. If the value is **Konservative Partei Novaland**, the **Konservative Partei Novaland** is displayed in the left column and the **Soziale Partei Novaland** in the right column, and vice versa.
 
 The following code snippet shows how the parties are displayed in the HTML template. This code is repeated for both parties, with the only difference being the party name and image:
 
@@ -220,6 +218,6 @@ The header is defined as usual containing the day of the week and the day count 
 
 6. The debrief from Novaland
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is the last page of the election app and the last page of the Novaland stay. On this page, participants were informed that their stay in Novaland is over and they will be redirected to the end of the questionnaire. The page es defined in the :code:`election_outro` page class.
-The page only contains the header of the page, which is defined as usual and some text body. The text informs participants that their stay in Novaland is over and they will be redirected to the end of the questionnaire. They were specifically told that Novaland is a fictional place and does not exist in reality. They were also informed that the upcoming questionnaire would be about their real life.
+This is the last page of the election app and the last page of the Novaland stay. On this page, participants were informed that their stay in Novaland is over and they will be redirected to the end of the questionnaire. The page is defined in the :code:`election_outro` page class.
+The page only contains the header of the page, which is defined as usual, and some text body. Participants were specifically told that Novaland is a fictional place and does not exist in reality. They were also informed that the upcoming questionnaire would be about their real life.
 
