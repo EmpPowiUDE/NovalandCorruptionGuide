@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'NovalandCorruptionGuide'
-copyright = '2025, POLITSOLID Project Team'
+copyright = '2025, POLITSOLID Project Team111'
 author = 'Goerres, Eicheler, Kemper, Chapkovski1111'
 release = '2025'
 
