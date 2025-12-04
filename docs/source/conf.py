@@ -8,7 +8,7 @@
 
 project = 'NovalandCorruptionGuide'
 copyright = '2025, POLITSOLID Project Team'
-author = 'Goerres, Eicheler, Kemper, Chapkovski'
+author = 'Goerres, Eicheler, Kemper, Chapkovski1111'
 release = '2025'
 
 # -- General configuration ---------------------------------------------------
