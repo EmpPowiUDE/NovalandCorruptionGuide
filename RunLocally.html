@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Running the Novaland Project Locally &#8212; NovalandCorruptionGuide 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Adding New Vignettes and Smokescreens" href="AddVignettes.html" />
+    <link rel="prev" title="Structure of the oTree project" href="ProjectStructure.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="running-the-novaland-project-locally">
+<span id="runlocally"></span><h1>Running the Novaland Project Locally<a class="headerlink" href="#running-the-novaland-project-locally" title="Link to this heading">¶</a></h1>
+<p>This guide explains how to set up and run the Novaland oTree project on your local machine for development and testing purposes.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<p>Before proceeding, ensure that you have the following installed:</p>
+<ul class="simple">
+<li><p>Python 3.12</p></li>
+<li><p>Git</p></li>
+<li><p>pip (Python package installer)</p></li>
+<li><p>Virtual environment support (optional but recommended)</p></li>
+</ul>
+</section>
+<section id="step-by-step-setup">
+<h2>Step-by-Step Setup<a class="headerlink" href="#step-by-step-setup" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Clone the repository</strong></p>
+<p>First, clone the Novaland project repository to your local machine:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/EmpPowiUDE/novaland2.git
+<span class="nb">cd</span><span class="w"> </span>novaland2
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create a virtual environment</strong></p>
+<p>It is recommended to use a virtual environment to manage dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3.12<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: venv\Scripts\activate</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Install dependencies</strong></p>
+<p>All required Python packages are listed in the <cite>requirements.txt</cite> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run the oTree development server</strong></p>
+<p>Once everything is installed, start the local server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otree<span class="w"> </span>devserver
+</pre></div>
+</div>
+<p>This will launch a local server at <cite>http://localhost:8000</cite>, which you can open in your browser.</p>
+</li>
+</ol>
+</section>
+<section id="optional-configuration">
+<h2>Optional Configuration<a class="headerlink" href="#optional-configuration" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>If you want to run a specific session configuration, you can append its name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otree<span class="w"> </span>devserver<span class="w"> </span><span class="nv">SESSION_CONFIG_NAME</span><span class="o">=</span>novaland_experiment
+</pre></div>
+</div>
+</li>
+<li><p>To reset the database (removes all previous data):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otree<span class="w"> </span>resetdb
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="useful-files-and-folders">
+<h2>Useful Files and Folders<a class="headerlink" href="#useful-files-and-folders" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><cite>settings.py</cite> — main configuration file for session settings, installed apps, and environment variables</p></li>
+<li><p><cite>main/</cite> — contains the core logic for the Novaland experiment, including HTML pages, Python logic, and templates</p></li>
+<li><p><cite>data/</cite> — contains YAML files such as <cite>vignette_q.yaml</cite> and <cite>corrupt_endings.yaml</cite> for question templates and storyline branching</p></li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>If you encounter module not found errors, make sure your virtual environment is activated.</p></li>
+<li><p>If port 8000 is busy, you can specify another port:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>otree<span class="w"> </span>devserver<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span>
+</pre></div>
+</div>
+</li>
+<li><p>For full documentation on oTree: <a class="reference external" href="https://otree.readthedocs.io">https://otree.readthedocs.io</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">NovalandCorruptionGuide</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Novaland2Layout.html">The fictional country of Novaland</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ProjectStructure.html">Structure of the oTree project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running the Novaland Project Locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AddVignettes.html">Adding New Vignettes and Smokescreens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeStructureGlobalFiles.html">Part 0: Project-wide files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeStructureIntro.html">Part 1: The Introduction App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeStructureMain.html">Part 2: The Stay in Novaland</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeStructureElection.html">Part 3: The Election in Novaland</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CodeStructurePost.html">Part 4: The Post-Experimental Questionnaire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deploying the oTree project</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="ProjectStructure.html" title="previous chapter">Structure of the oTree project</a></li>
+      <li>Next: <a href="AddVignettes.html" title="next chapter">Adding New Vignettes and Smokescreens</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, POLITSOLID Project Team.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/RunLocally.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
